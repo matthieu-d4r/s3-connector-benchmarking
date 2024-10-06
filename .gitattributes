@@ -1,0 +1,5 @@
+# EOL normalisation
+* text=auto
+
+# Source files
+*.py text diff=python
