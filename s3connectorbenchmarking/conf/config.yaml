@@ -1,0 +1,9 @@
+s3_uri: s3://s3torchconnector-demo/geonet/images
+region: us-east-1
+
+model: ent
+dataset_type: S3IterableDataset
+
+epochs: 3
+batch_size: 1
+num_workers: 2

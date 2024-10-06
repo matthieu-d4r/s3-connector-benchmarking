@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s3connectorbenchmarking"
+version = "0.0.1"
+dependencies = [
+    "boto3[crt]",
+    "datasets",
+    "fsspec<2024",
+    "hydra-core",
+    "pandas",
+    "Pillow",
+    "s3torchconnector",
+    "torch",
+    "torchvision",
+    "transformers",
+]
+requires-python = ">=3.10"
+description = "A toolset to benchmark the s3-connector-for-pytorch library."
+readme = "README.md"
+
+[project.scripts]
+run-benchmarks         = "s3connectorbenchmarking.s3connectorbenchmarking:run_benchmark"
+
+[tool.setuptools]
+packages = ["s3connectorbenchmarking"]
+
+[tool.ruff]
+extend-include = ["pyproject.toml"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
